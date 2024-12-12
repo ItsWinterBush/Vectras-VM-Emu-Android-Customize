@@ -174,10 +174,8 @@ public class StartVM {
                 bios = "-L ";
                 bios += "pc-bios";
             } else if (MainSettingsManager.getArch(activity).equals("ARM64")) {
-                bios = "-pflash ";
-                bios += AppConfig.basefiledir + "QEMU_EFI.fd,format=raw";
-                bios += " -pflash ";
-                bios += AppConfig.basefiledir + "QEMU_VARS.fd,format=raw";
+                bios = "-bios ";
+                bios += AppConfig.basefiledir + "QEMU_EFI.fd";
             } else {
                 bios = "-bios ";
                 bios += AppConfig.basefiledir + "bios-vectras.bin";
